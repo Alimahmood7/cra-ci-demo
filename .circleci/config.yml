@@ -7,7 +7,7 @@ jobs:
     docker:
       - image: circleci/node:12.9.1-browsers
 
-    working_directory: ~/repo
+    working_directory: ~/app
 
     steps:
       - checkout
@@ -24,7 +24,6 @@ jobs:
 
       - save_cache:
           paths:
-            - node_modules
             - ~/.cache 
           key: v1-dependencies-{{ checksum "package.json" }}
       
